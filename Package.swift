@@ -19,13 +19,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "HealthyIntelligenceComponent",
-            path: "Sources/HealthyIntelligenceComponent",
-            resources: [
-                .process("text.txt"),
-                .process("example.png"),
-                .copy("settings.plist"),
-                .copy("Sandbox.swift")
-            ]
+            path: "Sources/Components"
         ),
 
     ]
