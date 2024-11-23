@@ -22,7 +22,7 @@ let package = Package(
             resources: [
                 .process("text.txt"),
                 .process("example.png"),
-                .copy("settings.plist")
+                .copy("settings.plist"),
                 .copy("Sandbox.swift")
             ]
         ),
