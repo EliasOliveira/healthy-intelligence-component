@@ -8,7 +8,7 @@ struct MenuItem: View {
     
     var body: some View {
     
-        VStack {
+        VStack(alignment: .center) {
             HStack(alignment: .center, spacing: 10.0) {
                 AsyncImage(url: URL(string: mockImageUrl)) { image in
                     image.resizable()
@@ -24,8 +24,9 @@ struct MenuItem: View {
             }
             
         }
-        .frame(width: 100.0)
-        .background(Color.gray)
+        .padding(2.0)
+        .frame(width: 155.0)
+        .background(Color.black)
         
     }
 }
