@@ -19,7 +19,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "HealthyIntelligenceComponent",
-            path: "Sources/Components"
+            path: "Sources/HealthyIntelligenceComponent"
         ),
 
     ]
