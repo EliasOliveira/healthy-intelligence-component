@@ -3,10 +3,23 @@
 
 import SwiftUI
 
-struct MenuItem: View {
+public enum MenuItemType {
+    case image(Image)
+    case text(Text)
+}
+
+public func hello () {
+    print("Hello, World!")
+}
+
+@available(macOS 14, iOS 18, *)
+public struct MenuItem: View {
+    
+    public init() {}
+    
     var mockImageUrl = "https://firebasestorage.googleapis.com/v0/b/streaminator-lives.appspot.com/o/assets%2Fchincoteague%402x.jpg?alt=media&token=b3ec1824-39b9-4358-9506-ce2551039650"
     
-    var body: some View {
+    public var body: some View {
     
         VStack(alignment: .center) {
             HStack(alignment: .center, spacing: 10.0) {
