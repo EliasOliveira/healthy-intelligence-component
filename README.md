@@ -7,9 +7,6 @@ This project objective is store the SwiftUI components to be used on the Helthy 
 
 ## Include Dependency
 
-TODO
+Add as package dependency
 
-### Examples
-
-TODO
 
