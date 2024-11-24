@@ -10,12 +10,16 @@ import SwiftUI
 struct Sandbox: View {
     var body: some View {
         
+        NavigationSplitView {
+            
+        } detail: {
+            MenuItem(menuItemType: .icon)
+        }
         
-        
-        
+       
     }
 }
 
 #Preview {
-    SwiftUIView()
+    Sandbox()
 }

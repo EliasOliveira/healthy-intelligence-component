@@ -2,20 +2,24 @@
 // 23/11/2024 - Junior
 
 import SwiftUI
-
-public enum MenuItemType {
-    case image(Image)
-    case text(Text)
-}
-
-public func hello () {
-    print("Hello, World!")
-}
+import AppKit
 
 @available(macOS 14, iOS 18, *)
 public struct MenuItem: View {
     
     public init() {}
+    
+    public init(menuItemType: MenuItemType) {
+        self.menuItemType = menuItemType
+    }
+    
+    private var menuItemType: MenuItemType = .image
+    
+    
+    public enum MenuItemType {
+        case image
+        case icon
+    }
     
     var mockImageUrl = "https://firebasestorage.googleapis.com/v0/b/streaminator-lives.appspot.com/o/assets%2Fchincoteague%402x.jpg?alt=media&token=b3ec1824-39b9-4358-9506-ce2551039650"
     
@@ -23,13 +27,24 @@ public struct MenuItem: View {
     
         VStack(alignment: .center) {
             HStack(alignment: .center, spacing: 10.0) {
-                AsyncImage(url: URL(string: mockImageUrl)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
+                switch menuItemType {
+                case .image:
+                    AsyncImage(url: URL(string: mockImageUrl)) { image in
+                        image.resizable()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 55, height: 55)
+                    .cornerRadius(5)
+                case .icon:
+                    
+                    Image(systemName: "gearshape")
+                          .foregroundStyle(.teal, .gray)
+                          .font(.system(size: 42.0))
+
+//                        .symbolEffect(.bounce.up.wholeSymbol, options: .nonRepeating)
                 }
-                .frame(width: 55, height: 55)
-                .cornerRadius(5)
+                
                 Text("38 >")
             }
             HStack(alignment: .center, spacing: 10.0) {
